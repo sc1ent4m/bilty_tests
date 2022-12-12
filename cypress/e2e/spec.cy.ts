@@ -58,7 +58,7 @@ describe("Retrieve Bitlinks by Group", () => {
 describe("Update a Bitlink", () => {
   it("status 200", () => {
     let r = (Math.random() + 1).toString(36).substring(7);
-    let: update_data = { ...update_url_data };
+    let update_data = { ...update_url_data };
     let new_title = `CMYK ${r}`;
     update_data.title = new_title;
     cy.request({
@@ -76,7 +76,7 @@ describe("Update a Bitlink", () => {
   });
 
   it("status 402 Upgrade Required", () => {
-    let: update_data = { ...update_url_data };
+    let update_data: any = { ...update_url_data };
     update_data.deeplinks = [];
     cy.request({
       method: "PATCH",
@@ -131,7 +131,7 @@ describe("Update a Bitlink", () => {
     });
   });
   it("status 422 Unprocessable Entity", () => {
-    let: update_data = { ...update_url_data };
+    let update_data: any = { ...update_url_data };
     update_data.archived = ["wrong parameter"];
     cy.request({
       method: "PATCH",
