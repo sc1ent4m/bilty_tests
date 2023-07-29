@@ -1,4 +1,3 @@
-# bitly ts/cypress tests
 This is simple Cypress API tests.  
 To install dependencies execute following code in project root directory:
 ```
